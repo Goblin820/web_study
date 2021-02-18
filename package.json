@@ -1,0 +1,23 @@
+{
+  "name": "web_study",
+  "version": "0.0.1",
+  "description": "웹 학습 자료",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Goblin820/web_study.git"
+  },
+  "author": "Goblin820",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Goblin820/web_study/issues"
+  },
+  "homepage": "https://github.com/Goblin820/web_study#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
