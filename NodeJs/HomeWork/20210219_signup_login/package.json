@@ -1,0 +1,11 @@
+{
+	"name": "20210219_signup_login",
+	"version": "0.0.1",
+	"description": "signup, login",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon ./script/app.js"
+	},
+	"author": "Goblin820",
+	"license": "ISC"
+}

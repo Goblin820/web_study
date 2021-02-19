@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<style>
+			section {
+				margin: 100px auto 0px auto;
+				width: 500px;
+			}
+
+			#login-popup {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(20, 20, 20, 0.5);
+				z-index: 100;
+			}
+			#login-layout {
+				margin: 300px auto 0px auto;
+				width: 180px;
+				height: 150px;
+				border: 1px solid black;
+				border-radius: 5px;
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<h2>회원 정보</h2>
+			<span>id : </span>
+			<span id="userId"></span><br /><br />
+			<input id="btn-login-logout" type="button" value="" />
+			<input id="btn-sigup" type="button" value="회원가입" />
+		</section>
+
+		<div id="login-popup">
+			<div id="login-layout">
+				<span>id</span>
+				<input type="text" /><br />
+				<span>password</span>
+				<input type="password" /><br />
+				<input id="btn-popup-login" type="submit" value="로그인" />
+			</div>
+		</div>
+
+		<script src="../script/login.js"></script>
+	</body>
+</html>
