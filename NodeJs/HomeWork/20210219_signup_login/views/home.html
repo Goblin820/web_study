@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+		<style>
+			section {
+				margin: 100px auto 0px auto;
+				width: 500px;
+			}
+
+			#login-popup {
+				position: fixed;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(20, 20, 20, 0.5);
+				z-index: 100;
+			}
+			#login-layout {
+				margin: 300px auto 0px auto;
+				width: 180px;
+				height: 150px;
+				border: 1px solid black;
+				border-radius: 5px;
+				background-color: white;
+			}
+			#btn-popup-close {
+				margin: 0;
+				padding: 0;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<h2>WELLCOME</h2>
+			<div id="userInfo">
+				<h2>회원 정보</h2>
+				<span>id : </span>
+				<span id="userId"></span><br /><br />
+			</div>
+			<input id="btn-login-logout" type="button" value="" />
+			<input id="btn-sigup" type="button" value="회원가입" />
+		</section>
+
+		<div id="login-popup">
+			<div id="login-layout">
+				<button id="btn-popup-close">X</button>
+				<span>id</span>
+				<input id="input-login-id" type="text" /><br />
+				<span>password</span>
+				<input id="input-login-password" type="password" /><br />
+				<input id="btn-popup-login" type="button" value="로그인" />
+			</div>
+		</div>
+
+		<script src="../script/home.js"></script>
+	</body>
+</html>
