@@ -12,18 +12,19 @@ router.post('/signup', function (req, res) {
 	console.log('회원가입 시도');
 
 	let body = req.body;
-	// console.log(body);
 
+	// 암호화 작업
 	crypto.randomBytes(64, function (err, buf) {
-		crypto.pbkdf2(body.userPass, buf.toString('base64'), 100000, 64, 'sha512', async function (err, key) {
+		const salt = buf.toString('base64');
+		crypto.pbkdf2(body.userPass, salt, 100000, 64, 'sha512', async function (err, key) {
 			let user = {
 				id: body.userId,
-				password: key,
-				slat: buf,
+				password: key.toString('base64'),
+				salt: salt,
 			};
 
-			// 쿠키 생명주기를 5분으로 설정
-			res.cookie(body.userId, user, { maxAge: 300000 });
+			// 쿠키 생명주기를 10분으로 설정
+			res.cookie(body.userId, user, { maxAge: 600000 });
 
 			res.redirect('/signup/result');
 		});
@@ -89,9 +90,9 @@ router.get('/signup/clear', function (req, res) {
 
 // 로그인 상태 체크
 router.get('/loginCheck', function (req, res) {
-	if (req.session.uiserId) {
-		console.log('로그인 체크 id :', req.sessionID);
-		res.status(200).send('로그인 성공했다');
+	if (req.session.userId) {
+		console.log('로그인 체크 id :', req.session.userId);
+		res.status(200).send(req.session.userId);
 	} else {
 		res.status(404).send('로그인 되어있는 아이디가 없다');
 	}
@@ -101,19 +102,37 @@ router.get('/loginCheck', function (req, res) {
 router.post('/login', function (req, res) {
 	console.log(req.body);
 	const body = req.body;
+
+	const dbData = req.cookies[body.id];
+
 	// 존재하는 아이디가 없다면
-	if (req.cookies[body.id] == null) {
+	if (dbData == null) {
 		req.session.destroy();
 		res.status(404).send('존재하는 아이디가 없습니다.');
 	} else {
-		req.session.userId = req.cookies[body.id].id;
-		req.session.password = req.cookies[body.id].password;
-		req.session.slat = req.cookies['asda'].slat;
+		let inputPassword = body.pass;
+		let dbPassword = dbData.password;
+		let salt = dbData.salt;
+		let hashPassword = '';
+
+		// 복호화 작업
+		crypto.pbkdf2(inputPassword, salt, 100000, 64, 'sha512', async function (err, key) {
+			hashPassword = key.toString('base64');
+
+			// 비밀번호 일치
+			if (dbPassword === hashPassword) {
+				console.log('비밀번호 맞음');
+				req.session.userId = dbData.id;
+				res.status(200).send(body);
+			} else {
+				res.status(404).send('비밀번호가 틀렸습니다.');
+			}
+		});
 	}
 });
 
 router.get('/logout', function (req, res) {
 	req.session.destroy();
-	res.redirect('/');
+	res.status(200).send('로그아웃 성공');
 });
 exports.router = router;
