@@ -1,0 +1,15 @@
+{
+    "name": "db_student_records",
+    "version": "0.0.1",
+    "description": "학생기록부",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "mysql2": "^2.2.5",
+        "sequelize-cli": "^6.2.0"
+    }
+}

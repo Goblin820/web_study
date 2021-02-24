@@ -1,0 +1,9 @@
+{
+    "student_records": {
+        "username": "root",
+        "password": "1234",
+        "database": "student_records",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
+}

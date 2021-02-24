@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>리스트 페이지</title>
+    </head>
+    <body>
+        <h1>리스트 페이지</h1>
+        <a href="/insert">삽입 데이터</a>
+
+        <table width="100%" border="1">
+            <tr>
+                <td>DELETE</td>
+                <td>EDIT</td>
+                <td>ID</td>
+                <td>이름</td>
+				<td>나이</td>
+                <td>성별</td>
+                <td>키</td>
+                <td>주소</td>
+                <%  data.forEach((item, index) => { %>
+                    <tr>
+                        <td><a href="/delete/<%= item.id %> ">DELETE</a></td>
+                        <td><a href="/edit/<%= item.id %> ">EDIT</a></td>
+                        <td>
+                            <%= item.id %> 
+                        </td>
+                        <td>
+                            <%= item.name %> 
+                        </td>
+                        <td>
+                            <%= item.age %> 
+                        </td>
+                        <td>
+                            <%= item.sex %> 
+                        </td>
+                        <td>
+                            <%= item.height %> 
+                        </td>
+                        <td>
+                            <%= item.address %> 
+                        </td>
+                    </tr>
+                <% }) %> 
+            </tr>
+        </table>
+    </body>
+</html>
