@@ -1,0 +1,11 @@
+{
+	"name": "simple_website",
+	"version": "0.0.1",
+	"description": "노드 활용해서 심플한 웹사이트를 만들어라",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon "
+	},
+	"author": "Goblin820",
+	"license": "ISC"
+}

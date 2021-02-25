@@ -1,0 +1,24 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Home
+        //- 스타일 시트 추가
+        style
+            include ../public/normalize.css
+            include ../public/style.css
+    body
+        #main  
+            header
+                h2#header-title 책 읽는 남자
+                include header.pug
+
+            section 
+                
+            //- form(action="post", method="")
+                input(type="text")
+
+        script 
+            include ../public/front.js

@@ -1,0 +1,40 @@
+/* COMMON */
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* COMMON BODY */
+#main {
+	width: 900px;
+	height: auto;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+}
+
+/* COMMON TAGS */
+.clear-both {
+	clear: both;
+}
+
+/* HEADER */
+#header-title {
+	float: left;
+	margin-left: 50px;
+}
+#header-gnb {
+	float: right;
+	margin-right: 20px;
+}
+#header-gnb-list {
+	display: inline-block;
+}
+#header-gnb-list > li {
+	float: right;
+	margin-left: 20px;
+}
