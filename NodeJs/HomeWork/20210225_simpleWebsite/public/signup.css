@@ -1,0 +1,17 @@
+section {
+    margin-top: 50px;
+}
+
+fieldset {
+    margin: auto;
+    width: 300px;
+}
+
+#singup-btn-td {
+    margin: auto;
+}
+
+#btn-signup {
+    margin-top: 20px;
+    text-align: center;
+}

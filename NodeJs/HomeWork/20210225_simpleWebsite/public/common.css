@@ -1,0 +1,37 @@
+/* COLOR PALETTE
+   hover : #fb8c00 (Orange)
+*/
+
+/* COMMON */
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: #fb8c00;
+}
+
+/* COMMON BODY */
+#main {
+    width: 900px;
+    height: auto;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+/* COMMON TAGS */
+.clear-both {
+    clear: both;
+}

@@ -1,0 +1,42 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title 회원가입
+        style
+            include ../public/normalize.css
+            include ../public/common.css
+            include ../public/header.css
+            include ../public/signup.css
+    body 
+        #main
+            header
+                include header.pug
+
+            section 
+                fieldset
+                    legend 회원 가입
+                    table
+                        tr
+                            td
+                                label(for='user-id') 아이디
+                            td    
+                                input#user-id(type='text', name='user_id')
+                        tr
+                            td
+                                label(for='user-password') 비밀번호
+                            td
+                                input#user-password(type='text', name='user_password')
+                        tr
+                            td
+                                label(for='user-name') 이름
+                            td
+                                input#user-name(type='text', name='user_name')
+                #btn-signup    
+                    input(type="button", value="가입하기")
+
+
+        script 
+            include commonScripts.pug
