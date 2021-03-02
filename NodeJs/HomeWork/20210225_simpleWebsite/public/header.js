@@ -1,16 +1,15 @@
 const headerGNBObj = new HeaderGNB();
 
-document.addEventListener('DOMContentLoaded', function () {
-    initDataSet();
+window.addEventListener('DOMContentLoaded', function () {
+    header_initData();
+    header_initEventListener();
+    header_initSetting();
 
-    headerGNBObj.elements.get('logout').hidden = true;
-    headerGNBObj.elements.get('userName').hidden = true;
-
-    // document.getElementById('gnb-list-logout').hidden = false;
+    // document.getElementById('gnb-list-logout').hidden = true;
     // document.getElementById('gnb-list-userName').hidden = true;
 });
 
-function initDataSet() {
+function header_initData() {
     headerGNBObj.elements.set(
         'logout',
         document.getElementById('gnb-list-logout')
@@ -21,4 +20,9 @@ function initDataSet() {
     );
 }
 
-function initEventListener() {}
+function header_initEventListener() {}
+
+function header_initSetting() {
+    headerGNBObj.elements.get('logout').hidden = true;
+    headerGNBObj.elements.get('userName').hidden = true;
+}

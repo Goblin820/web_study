@@ -10,6 +10,8 @@ html(lang="ko")
             include ../public/common.css
             include ../public/header.css
             include ../public/signup.css
+
+        script(src='https://unpkg.com/axios/dist/axios.min.js')
     body 
         #main
             header
@@ -34,9 +36,10 @@ html(lang="ko")
                                 label(for='user-name') 이름
                             td
                                 input#user-name(type='text', name='user_name')
-                #btn-signup    
-                    input(type="button", value="가입하기")
+                #btn-signup-box    
+                    input#btn-submit(type="button", value="가입하기")
 
 
         script 
             include commonScripts.pug
+            include ../public/signup.js

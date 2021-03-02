@@ -3,3 +3,9 @@ class HeaderGNB {
         this.elements = new Map();
     }
 }
+
+class SignupData {
+    constructor() {
+        this.elements = new Map();
+    }
+}
