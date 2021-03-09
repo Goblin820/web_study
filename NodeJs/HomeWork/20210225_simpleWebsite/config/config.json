@@ -1,9 +1,0 @@
-{
-    "dev": {
-        "username": "root",
-        "password": "1234",
-        "database": "simple_web",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
-    }
-}
